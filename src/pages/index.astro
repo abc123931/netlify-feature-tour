@@ -115,24 +115,42 @@ import Layout from '../components/layout.astro';
         Learn more <span class="sr-only">about Netlify Forms</span>
       </a>
     </section>
-		<form name="contact" data-netlify="true" data-netlify-recaptcha="true">
+		<form name="contact" data-netlify="true">
       <p>
         <label>Name <input type="text" name="name" /></label>
       </p>
-      <p>
-        <label>Email <input type="email" name="email" /></label>
-      </p>
-			<div data-netlify-recaptcha="true"></div>
+      <input type="file" id="file" name="file" multiple>
       <p>
         <button type="submit">Send</button>
       </p>
     </form>
-		<form action="https://link.hyperforms.app/f/q6jTKDrOiTJYABc" method="POST">
+		<form action="https://hyperform.jp/api/tRUYz2XV" method="POST" enctype="multipart/form-data">
+      <input type="file" id="file" name="file" multiple>
+			<div>
+        <button>送信</button>
+      </div>
+		</form>
+		<form action="https://link.hyperforms.app/f/q6jTKDrOiTJYABc" method="POST" enctype="multipart/form-data">
       <input type="text" name="name">
-      <input type="text" name="phone">
-      <input type="email" name="email">
-      <textarea name="message"></textarea>
+      <input type="file" id="file" name="file" multiple>
       <button type="submit">Send Message</button>
+    </form>
+		<form action="http://localhost:8080/f/q6jTKDrOiTJYABc" method="POST">
+      <input type="text" name="name">
+      <!-- <input type="text" name="phone">
+      <input type="email" name="email">
+      <textarea name="message"></textarea> -->
+      <button type="submit">Send Message</button>
+    </form>
+		<form method="post" action="http://localhost:8080/f/q6jTKDrOiTJYABc" enctype="multipart/form-data">
+      <input type="text" name="name">
+      <div>
+        <label for="file">アップロードするファイルを選択してください</label>
+        <input type="file" id="file" name="file" multiple>
+      </div>
+      <div>
+        <button>送信</button>
+      </div>
     </form>
   </main>
 </Layout>
